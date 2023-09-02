@@ -1,6 +1,7 @@
 import requests
 import time
 from random import choice
+
 s = requests.Session()
 s.trust_env = False
 page_source2 = []
@@ -25,13 +26,11 @@ for a in range(99999999999999999999999999999):
     for a in range(1):
         try:
             r = s.get("https://blaze.com/api/roulette_games/recent",headers=ua)
-            
             page_source = r.content
         except:
             time.sleep(5)
             print("5")
             r = s.get("https://blaze.com/api/roulette_games/recent",headers=ua)
-            
             page_source = r.content
         if page_source == page_source2:
             print("Same results, wait.")
@@ -58,80 +57,4 @@ for a in range(99999999999999999999999999999):
             time.sleep(9)
             print("9!")
             page_source2 = r.content
-
-
-
-
-
-
-
-
-#sopa = bs(r.content , "html.parser")
-# table.find_all("td",{"class":"item02"})[0a14].span.text
-
-
-# estrutura de dados que eu vou usar
-# pilha
-
-
-
-
-
-
-
-
-# def takelast():
-#     r = requests.get("https://blaze.com/api/roulette_games/recent")
-#     r.status_code
-
-#     j = r.json()[0]
-#     id = j["id"]
-#     created_at = j["created_at"]
-#     color = j['color']
-#     roll = j['roll']
-#     server_seed = j['server_seed']
-#     dados = f"{id};{created_at};{color};{roll};{server_seed}\n"
-#     return dados
-
-
-# for a in range(100):
-#     r = requests.get("https://blaze.com/api/roulette_games/recent")
-#     r.status_code
-
-#     j = r.json()[0]
-    
-#     id = j["id"]
-#     created_at = j["created_at"]
-#     color = j['color']
-#     roll = j['roll']
-#     server_seed = j['server_seed']
-#     dados = f"{id};{created_at};{color};{roll};{server_seed}\n"
-#     print(dados)
-#     print(a)
-#     with open('blaze_history.txt', 'a+') as f:
-#         f2 = open('blaze_history.txt', 'r')
-#         for b in f2.read():
-#             if b.split(";")[0] == j["id"]:
-#                 print("tem")
-#             else:
-#                 f.write(dados)
-#                 print("não tem")
-            
-            
-        
-        
-        
-        
-        
-        # if dados not in f1:
-        #     f1.write(dados)
-        #     print(dados)
-        # else:
-        #     print("ja tem")
-            
-    
-
-
-
-
        
